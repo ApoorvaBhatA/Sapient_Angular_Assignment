@@ -1,0 +1,57 @@
+.ecommerce-container {
+    margin: 2%;
+    .menu-container {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 20px;
+        .grid {
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .list {
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .filter {
+            margin-left: 20px;
+            padding: 2px;
+        }
+    }
+    .card {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        .checked {
+            color: orange;
+        }
+    }
+    .grid-view {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 50px;
+    }
+    .list-view {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 50px;
+    }
+    .product-title, .product-price {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .product-price {
+        color: #565959;
+        font-size: 15px;
+        margin-bottom: 10px;
+        .price-span {
+            font-size: 18px;
+            color: #B12704;
+        }
+    }
+    .product-desc {
+        font-size: 15px;
+        margin-bottom: 10px;
+
+    }
+}

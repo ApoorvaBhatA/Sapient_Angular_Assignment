@@ -1,1 +1,28 @@
-<p>ecommerce-products works!</p>
+<div class="ecommerce-container">
+    <div class="menu-container">
+        <img src="../.../../../../assets/images/icons8-grid-64.png" height="40" width="40" class="grid" alt="grid"
+            (click)="onChangeView(0)">
+        <img src="../.../../../../assets/images/icons8-list-24.png" height="40" width="40" class="list" alt="list"
+            (click)="onChangeView(1)">
+        <select name="filters" class="filter" (change)="sort($event)">
+            <option value="popularity">Popularity</option>
+            <option value="low">Show low to high price</option>
+            <option value="high">show high to low price</option>
+        </select>
+    </div>
+    <div [ngClass]="{'grid-view' : viewFlag === 0 , 'list-view' : viewFlag === 1 }">
+        <div *ngFor="let product of products" class="card">
+            <div class="product-title">{{product.title}}</div>
+            <div class="product-desc">{{product.description}}</div>
+            <div class="product-price">Price: <span class="price-span">&#8377; {{product.price}}</span></div>
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star" [ngClass]="{'checked' : product.rating>0}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked' : product.rating>1}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked' : product.rating>2}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked' : product.rating>3}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked' : product.rating>4}"></span>
+        </div>
+    </div>
+
+</div>
