@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'route1',
     loadChildren: () => import('@greeting-banner/greeting-banner.module').then(m => m.GreetingBannerModule)
+  },
+  {
+    path: 'route2',
+    loadChildren: () => import('@ecommerce-products/ecommerce-products.module').then(m => m.EcommerceProductsModule)
   }
 ];
 

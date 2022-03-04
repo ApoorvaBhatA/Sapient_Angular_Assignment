@@ -23,7 +23,8 @@
     "paths": {
       "@home/*": ["./src/app/components/home/*"],
       "@greeting-banner/*": ["./src/app/components/greeting-banner/*"],
-      "@json-data/*":["./src/app/utils/data/*"]
+      "@json-data/*":["./src/app/utils/data/*"],
+      "@ecommerce-products/*":["./src/app/components/ecommerce-products/*"]
     },
     "lib": [
       "es2020",
