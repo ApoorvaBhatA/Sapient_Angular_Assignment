@@ -1,9 +1,5 @@
 @mixin rings($duration, $delay) {
     opacity: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     top: -8px;
     left: -8px;
@@ -17,7 +13,7 @@
     animation-duration: $duration;
     animation-delay: $delay;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(.65,0,.34,1);
+    animation-timing-function: linear;
     z-index: -1;
 }
 
@@ -38,8 +34,8 @@
     width: auto;
     background: #FFFFFF;
     border: 1px solid black;
-    animation: myfirst 5s infinite;
-    animation-direction: alternate;
+    animation: rotate 5s infinite;
+    //animation-direction: alternate;
 
     span {
         position: relative;
@@ -78,10 +74,25 @@
   }
 }
   
-@keyframes myfirst {
-    0%   {left: 0px; top: 0px;}
-    25%  {left: 200px; top: 0px;}
-    50%  {left: 200px; top: 200px;}
-    75%  {left: 0px; top: 200px;}
-    100% {left: 0px; top: 0px;}
+@keyframes rotate {
+    0%   {
+        //left: 0px; top: 0px;
+        transform: rotate(0deg);
+        }
+    25%  {
+        //left: 200px; top: 0px;
+        transform: rotate(90deg);
+    }
+    50%  {
+        //left: 200px; top: 200px;
+        transform: rotate(180deg);
+    }
+    75%  {
+       //left: 0px; top: 200px;
+       transform: rotate(270deg);
+    }
+    100% {
+       //left: 0px; top: 0px;
+       transform: rotate(360deg);
+    }
 }
