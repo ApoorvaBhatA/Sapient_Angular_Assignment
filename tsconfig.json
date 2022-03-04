@@ -18,10 +18,12 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@home/*": ["./src/app/components/home/*"],
       "@greeting-banner/*": ["./src/app/components/greeting-banner/*"],
-
+      "@json-data/*":["./src/app/utils/data/*"]
     },
     "lib": [
       "es2020",
