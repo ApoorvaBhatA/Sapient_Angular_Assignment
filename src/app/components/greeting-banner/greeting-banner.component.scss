@@ -33,8 +33,7 @@
     height: 150px;
     width: auto;
     background: #FFFFFF;
-    border: 1px solid black;
-    animation: rotate 5s infinite;
+    // border: 1px solid black;
     //animation-direction: alternate;
 
     span {
@@ -43,6 +42,8 @@
         font-size: 72px;
         top: 5px;
         left: -5px;
+        animation: rotate 5s infinite;
+
     }
   
     &::after {
@@ -75,24 +76,10 @@
 }
   
 @keyframes rotate {
-    0%   {
-        //left: 0px; top: 0px;
-        transform: rotate(0deg);
-        }
-    25%  {
-        //left: 200px; top: 0px;
-        transform: rotate(90deg);
-    }
-    50%  {
-        //left: 200px; top: 200px;
-        transform: rotate(180deg);
-    }
-    75%  {
-       //left: 0px; top: 200px;
-       transform: rotate(270deg);
-    }
-    100% {
-       //left: 0px; top: 0px;
-       transform: rotate(360deg);
-    }
+    0% { opacity: 0; }
+	25% { opacity: 1; transform: rotateY(180deg); }
+	50% { opacity: 1; transform: translateX(0px); }
+	75% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(0px); }
+	
 }
