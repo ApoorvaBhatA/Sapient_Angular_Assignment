@@ -1,41 +1,20 @@
-@mixin rings($duration, $delay) {
-    opacity: 0;
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: 0;
-    bottom: 0;
-    content: '';
-    height: 100%;
-    width: 100%;
-    border: 8px solid black;
-    animation-name: ripple;
-    animation-duration: $duration;
-    animation-delay: $delay;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    z-index: -1;
-}
 
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 98vh;
 }
 
 .ripple-container {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: auto;
     width: auto;
-    background: #FFFFFF;
-    // border: 1px solid black;
-    //animation-direction: alternate;
-
+    border: 1px solid black;
+    margin: 10px;
     span {
         position: relative;
         padding: 50px;
@@ -45,36 +24,8 @@
         animation: rotate 5s infinite;
 
     }
-  
-    &::after {
-        @include rings(3s, 0s);
-    }
-  
-    &::before {
-        @include rings(3s, 0.5s);
-    }
 }
 
-@keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale3d(0.75,0.75,1);
-    box-shadow: 0 0 0 0rem rgba(black, 0.2),
-    0 0 0 1rem rgba(black, 0.2),
-    0 0 0 1rem rgba(black, 0.2),
-    0 0 0 1rem rgba(black, 0.2);
-  }
-  
-  to {
-    opacity: 0;
-    transform: scale3d(1.5,1.5,1);
-    box-shadow: 0 0 0 1rem rgba(black, 0.2),
-                0 0 0 2rem rgba(black, 0.2),
-                0 0 0 5rem rgba(black, 0.2),
-                0 0 0 8rem rgba(black, 0);
-  }
-}
-  
 @keyframes rotate {
     0% { opacity: 0; }
 	25% { opacity: 1; transform: rotateY(180deg); }
