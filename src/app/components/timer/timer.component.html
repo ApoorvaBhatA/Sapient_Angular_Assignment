@@ -1,7 +1,7 @@
 <div class="timer-container">
     <div class="first-wrap">
-        <display-count-down [timerDetails]="timerDetails"></display-count-down>
-        <timer-controller (initiateTimer)="getTimerDetails($event)"></timer-controller>
+        <display-count-down [timerDetails]="timerDetails" (pausedTime)="getpausedTimeDetails($event)"></display-count-down>
+        <timer-controller [pausedTime]="pausedTimeDetails" (initiateTimer)="getTimerDetails($event)"></timer-controller>
     </div>
     <div class="second-wrap">
         <time-stamp-logger></time-stamp-logger>

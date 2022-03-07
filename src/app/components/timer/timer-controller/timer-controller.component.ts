@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'timer-controller',
@@ -10,6 +10,7 @@ export class TimerControllerComponent implements OnInit {
   timerLimit!: number;
   startFlag: boolean = false;
   @Output() initiateTimer = new EventEmitter<{ timerLimit: number, startFlag: boolean, resetFlag:boolean}>();
+  @Input() pausedTime: Array<number> = []
 
 
   constructor() { }
@@ -20,7 +21,7 @@ export class TimerControllerComponent implements OnInit {
   }
 
   onClickOfResetButton() {
-    this.startFlag = !this.startFlag;
+    this.startFlag = false;
     this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true })
   }
 

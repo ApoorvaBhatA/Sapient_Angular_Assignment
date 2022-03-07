@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
   timerDetails!: { timerLimit: number; startFlag: boolean; resetFlag: boolean};
+  pausedTimeDetails: Array<number> = [];
 
   constructor() { }
 
   getTimerDetails(event: any) {
     this.timerDetails = event;
     console.log(event);
+  }
+
+  getpausedTimeDetails(event: any) {
+    this.pausedTimeDetails = event.pausedTimeTracker
   }
 
   ngOnInit(): void {

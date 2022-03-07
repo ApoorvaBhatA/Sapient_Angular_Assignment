@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'display-count-down',
@@ -8,9 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DisplayCountDownComponent implements OnInit {
 
   intervalTracker!: number;
-  @Input() timerDetails!: { timerLimit: number; startFlag: boolean; resetFlag: boolean};
-  timer: number = 0;
-
+  @Input() timerDetails!: { timerLimit: number; startFlag: boolean; resetFlag: boolean };
+  timer: number | undefined;
+  pausedTimeTracker: Array<number> = []
+  @Output() pausedTime = new EventEmitter<{ pausedTimeTracker: Array<number> }>()
 
   constructor() { }
 
@@ -18,24 +19,29 @@ export class DisplayCountDownComponent implements OnInit {
     if (!this.timerDetails?.startFlag && !this.timerDetails?.resetFlag) {
       this.pauseTimer();
     }
-    else if(this.timerDetails?.startFlag && !this.timerDetails?.resetFlag){
+    else if (this.timerDetails?.startFlag && !this.timerDetails?.resetFlag) {
       this.timer = this.timer || this.timerDetails?.timerLimit;
       this.startTimer();
     }
-    else if(this.timerDetails?.resetFlag) {
+    else if (this.timerDetails?.resetFlag) {
       this.timer = this.timerDetails?.timerLimit;
-      console.log(this.timer)
+      clearInterval(this.intervalTracker);
     }
   }
 
   startTimer() {
     this.intervalTracker = window.setInterval(() => {
+      if(this.timer)
       this.timer = this.timer - 1;
     }, 1000);
   }
 
   pauseTimer() {
+    if(this.timer)
+    this.pausedTimeTracker.push(this.timer);
+    this.pausedTime.emit({ pausedTimeTracker: this.pausedTimeTracker })
     clearInterval(this.intervalTracker);
+
   }
 
   ngOnInit(): void {

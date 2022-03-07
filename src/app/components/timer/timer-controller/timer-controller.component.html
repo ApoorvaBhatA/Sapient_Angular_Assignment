@@ -1,5 +1,7 @@
 <label for="timer">Enter timer limit : </label>
 <input id="timer" name="timer" type="text" [(ngModel)]="timerLimit">
 
+<div *ngFor="let time of pausedTime">paused at {{time}}</div>
+
 <button (click)="onClickOfStartPauseButton()" [disabled]="!timerLimit">Start/Pause</button>
 <button (click)="onClickOfResetButton()" [disabled]="!timerLimit">Reset</button>
