@@ -24,7 +24,8 @@
       "@home/*": ["./src/app/components/home/*"],
       "@greeting-banner/*": ["./src/app/components/greeting-banner/*"],
       "@json-data/*":["./src/app/utils/data/*"],
-      "@ecommerce-products/*":["./src/app/components/ecommerce-products/*"]
+      "@ecommerce-products/*":["./src/app/components/ecommerce-products/*"],
+      "@timer/*":["./src/app/components/timer/*"]
     },
     "lib": [
       "es2020",

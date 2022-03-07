@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'route2',
     loadChildren: () => import('@ecommerce-products/ecommerce-products.module').then(m => m.EcommerceProductsModule)
+  },
+  {
+    path: 'route3',
+    loadChildren: () => import('@timer/timer.module').then(m => m.TimerModule)
   }
 ];
 
