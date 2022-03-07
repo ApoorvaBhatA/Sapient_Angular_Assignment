@@ -6,6 +6,7 @@ import { TimeStampLoggerComponent } from '@timer/time-stamp-logger/time-stamp-lo
 import { TimerControllerComponent } from '@timer/timer-controller/timer-controller.component';
 import { TimerComponent } from '@timer/timer.component';
 import { TimerRoutingModule } from '@timer/timer-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { TimerRoutingModule } from '@timer/timer-routing.module';
   ],
   imports: [
     CommonModule,
-    TimerRoutingModule
+    TimerRoutingModule,
+    FormsModule
   ]
 })
 export class TimerModule { }

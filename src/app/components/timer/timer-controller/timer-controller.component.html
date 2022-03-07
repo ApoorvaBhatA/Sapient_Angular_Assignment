@@ -1,1 +1,5 @@
-<p>timer-controller works!</p>
+<label for="timer">Enter timer limit : </label>
+<input id="timer" name="timer" type="text" [(ngModel)]="timerLimit">
+
+<button (click)="onClickOfStartPauseButton()" [disabled]="!timerLimit">Start/Pause</button>
+<button (click)="onClickOfResetButton()" [disabled]="!timerLimit">Reset</button>

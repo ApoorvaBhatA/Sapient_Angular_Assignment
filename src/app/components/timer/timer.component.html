@@ -1,1 +1,10 @@
-<p>timer works!</p>
+<div class="timer-container">
+    <div class="first-wrap">
+        <display-count-down [timerDetails]="timerDetails"></display-count-down>
+        <timer-controller (initiateTimer)="getTimerDetails($event)"></timer-controller>
+    </div>
+    <div class="second-wrap">
+        <time-stamp-logger></time-stamp-logger>
+        <clicks-tracker></clicks-tracker>  
+    </div>
+</div>
