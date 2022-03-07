@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'time-stamp-logger',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeStampLoggerComponent implements OnInit {
 
-  constructor() { }
+  @Input() timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
+  timers: Array<{ timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date }> =[];
+  
+  constructor() { 
+    console.log(this.timers);
+    
+  }
+
+  ngOnChanges() {
+    if(this.timerDetails)
+    this.timers.push(this.timerDetails);
+  }
 
   ngOnInit(): void {
   }

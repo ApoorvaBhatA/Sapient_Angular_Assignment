@@ -1,1 +1,3 @@
-<p>time-stamp-logger works!</p>
+<div *ngFor="let timer of timers">
+    {{timer?.startFlag === true ? 'Started' : (timer?.startFlag === false ? 'Paused' : '(timer?.resetFlag === true ? 'Reset' : '')')}} at {{timer?.dateTime|date:'dd-MM-yy hh:mm:ss a'}}
+</div>

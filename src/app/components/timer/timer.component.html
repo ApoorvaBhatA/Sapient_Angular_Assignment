@@ -4,7 +4,7 @@
         <timer-controller [pausedTime]="pausedTimeDetails" (initiateTimer)="getTimerDetails($event)"></timer-controller>
     </div>
     <div class="second-wrap">
-        <time-stamp-logger></time-stamp-logger>
-        <clicks-tracker></clicks-tracker>  
+        <time-stamp-logger [timerDetails]="timerDetails"></time-stamp-logger>
+        <clicks-tracker [timerDetails]="timerDetails"></clicks-tracker>  
     </div>
 </div>

@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class DisplayCountDownComponent implements OnInit {
 
   intervalTracker!: number;
-  @Input() timerDetails!: { timerLimit: number; startFlag: boolean; resetFlag: boolean };
+  @Input() timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
   timer: number | undefined;
   pausedTimeTracker: Array<number> = []
   @Output() pausedTime = new EventEmitter<{ pausedTimeTracker: Array<number> }>()
@@ -31,14 +31,14 @@ export class DisplayCountDownComponent implements OnInit {
 
   startTimer() {
     this.intervalTracker = window.setInterval(() => {
-      if(this.timer)
-      this.timer = this.timer - 1;
+      if (this.timer)
+        this.timer = this.timer - 1;
     }, 1000);
   }
 
   pauseTimer() {
-    if(this.timer)
-    this.pausedTimeTracker.push(this.timer);
+    if (this.timer)
+      this.pausedTimeTracker.push(this.timer);
     this.pausedTime.emit({ pausedTimeTracker: this.pausedTimeTracker })
     clearInterval(this.intervalTracker);
 

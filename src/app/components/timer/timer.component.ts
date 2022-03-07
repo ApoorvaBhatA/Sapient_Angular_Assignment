@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-  timerDetails!: { timerLimit: number; startFlag: boolean; resetFlag: boolean};
+  timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
   pausedTimeDetails: Array<number> = [];
 
   constructor() { }

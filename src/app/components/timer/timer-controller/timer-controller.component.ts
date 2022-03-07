@@ -8,8 +8,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class TimerControllerComponent implements OnInit {
 
   timerLimit!: number;
-  startFlag: boolean = false;
-  @Output() initiateTimer = new EventEmitter<{ timerLimit: number, startFlag: boolean, resetFlag:boolean}>();
+  startFlag: boolean | undefined;
+  @Output() initiateTimer = new EventEmitter<{ timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date }>();
   @Input() pausedTime: Array<number> = []
 
 
@@ -17,12 +17,12 @@ export class TimerControllerComponent implements OnInit {
 
   onClickOfStartPauseButton() {
     this.startFlag = !this.startFlag;
-    this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: false })
+    this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: false, dateTime: new Date() })
   }
 
   onClickOfResetButton() {
     this.startFlag = false;
-    this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true })
+    this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true, dateTime: new Date() })
   }
 
   ngOnInit(): void {
