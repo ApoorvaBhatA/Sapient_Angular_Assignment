@@ -1,0 +1,9 @@
+.tracker-wrap {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    gap: 30px;
+    .start-wrap, .pause-wrap {
+        text-align: center;
+    }
+}
