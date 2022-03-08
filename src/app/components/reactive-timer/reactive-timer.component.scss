@@ -1,0 +1,23 @@
+.timer-container {
+    border: 2px solid black;
+    padding: 2%;
+    margin: 2%;
+   .first-wrap {
+       display: flex;
+       justify-content: space-between;
+       gap: 20px;
+   }
+   .second-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+   }
+   display-count-down,timer-controller {
+    width: 100%;
+    border: 2px solid black;
+    padding: 10px;
+   }
+   time-stamp-logger,clicks-tracker {
+    width: 100%;
+   }
+}

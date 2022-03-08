@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ReactiveTimerService } from '@utils/services/reactive-timer.service';
 
 @Component({
-  selector: 'app-clicks-tracker',
+  selector: 'clicks-tracker',
   templateUrl: './clicks-tracker.component.html',
   styleUrls: ['./clicks-tracker.component.scss']
 })
 export class ClicksTrackerComponent implements OnInit {
 
-  constructor() { }
+  startCount!: number;
+  pausedCount!: number;
+
+  constructor(private reactiveTimerService: ReactiveTimerService) { }
 
   ngOnInit(): void {
+    this.reactiveTimerService.startButtonClickCount.subscribe((data)=>{
+      this.startCount = data;
+    })
+    this.reactiveTimerService.pauseButtonClickCount.subscribe((data)=>{
+      this.pausedCount = data;
+    })
   }
 
 }

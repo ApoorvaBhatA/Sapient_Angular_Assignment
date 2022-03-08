@@ -7,6 +7,7 @@ import { ClicksTrackerComponent } from '@reactive-timer/clicks-tracker/clicks-tr
 import { ReactiveTimerComponent } from '@reactive-timer/reactive-timer.component';
 import { ReactiveTimerService } from '@utils/services/reactive-timer.service';
 import { ReactiveTimerRoutingModule } from '@reactive-timer/reactive-timer-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,6 +24,7 @@ import { ReactiveTimerRoutingModule } from '@reactive-timer/reactive-timer-routi
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveTimerRoutingModule
   ]
 })
