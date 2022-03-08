@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'route3',
     loadChildren: () => import('@timer/timer.module').then(m => m.TimerModule)
+  },
+  {
+    path: 'route4',
+    loadChildren: () => import('@reactive-timer/reactive-timer.module').then(m => m.ReactiveTimerModule)
   }
 ];
 
