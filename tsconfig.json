@@ -27,7 +27,8 @@
       "@ecommerce-products/*":["./src/app/components/ecommerce-products/*"],
       "@timer/*":["./src/app/components/timer/*"],
       "@reactive-timer/*":["./src/app/components/reactive-timer/*"],
-      "@utils/*":["./src/app/utils/*"]
+      "@utils/*":["./src/app/utils/*"],
+      "@student/*":["./src/app/components/student-marks-table/*"]
     },
     "lib": [
       "es2020",

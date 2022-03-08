@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'route4',
     loadChildren: () => import('@reactive-timer/reactive-timer.module').then(m => m.ReactiveTimerModule)
+  },
+  {
+    path: 'route5',
+    loadChildren: () => import('@student/student-marks-table.module').then(m => m.StudentMarksTableModule)
   }
 ];
 
