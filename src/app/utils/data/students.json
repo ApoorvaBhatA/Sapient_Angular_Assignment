@@ -1,53 +1,50 @@
-{
-    "students": [
-     
-       {
-          "name":"max",
-          "class": "3",
-          "section": "A",
-          "sub1": "23",
-          "sub2": "35",
-          "sub3": "35"
-       },
-       {
-          "name":"kevin",
-          "class": "3",
-          "section": "B",
-          "sub1": "54",
-          "sub2": "43",
-          "sub3": "53"
-       },
-       {
-        "name":"max",
-        "class": "3",
-        "section": "A",
-        "sub1": "23",
-        "sub2": "35",
-        "sub3": "35"
-     },
-     {
-        "name":"kevin",
-        "class": "3",
-        "section": "B",
-        "sub1": "54",
-        "sub2": "43",
-        "sub3": "53"
-     },
-     {
-        "name":"max",
-        "class": "3",
-        "section": "A",
-        "sub1": "23",
-        "sub2": "35",
-        "sub3": "35"
-     },
-     {
-        "name":"kevin",
-        "class": "3",
-        "section": "B",
-        "sub1": "54",
-        "sub2": "43",
-        "sub3": "53"
-     }
-    ]
- }
+[
+   {
+      "name": "max",
+      "class": "3",
+      "section": "A",
+      "sub1": "23",
+      "sub2": "35",
+      "sub3": "35"
+   },
+   {
+      "name": "kevin",
+      "class": "4",
+      "section": "B",
+      "sub1": "54",
+      "sub2": "43",
+      "sub3": "53"
+   },
+   {
+      "name": "max",
+      "class": "3",
+      "section": "A",
+      "sub1": "23",
+      "sub2": "35",
+      "sub3": "35"
+   },
+   {
+      "name": "kevin",
+      "class": "3",
+      "section": "B",
+      "sub1": "54",
+      "sub2": "43",
+      "sub3": "53"
+   },
+   {
+      "name": "max",
+      "class": "3",
+      "section": "A",
+      "sub1": "23",
+      "sub2": "35",
+      "sub3": "35"
+   },
+   {
+      "name": "kevin",
+      "class": "3",
+      "section": "B",
+      "sub1": "54",
+      "sub2": "43",
+      "sub3": "53"
+   }
+]

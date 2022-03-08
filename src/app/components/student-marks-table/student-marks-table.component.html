@@ -1,1 +1,11 @@
-<p>student-marks-table works!</p>
+<table>
+    <th *ngFor="let heading of headings">
+        {{heading}}
+    </th>
+    <tr *ngFor="let student of students">
+        <td *ngFor="let entry of student | valuesFromObject">
+            {{entry}}
+        </td>
+    </tr>
+
+</table>
