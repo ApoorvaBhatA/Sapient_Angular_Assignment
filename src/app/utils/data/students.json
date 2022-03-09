@@ -1,50 +1,50 @@
 [
    {
-      "name": "max",
-      "class": "3",
+      "name": "Max",
+      "class": 3,
       "section": "A",
-      "sub1": "23",
-      "sub2": "35",
-      "sub3": "35"
+      "sub1": 23,
+      "sub2": 35,
+      "sub3": 35
    },
    {
-      "name": "kevin",
-      "class": "4",
+      "name": "Sarah",
+      "class": 4,
       "section": "B",
-      "sub1": "54",
-      "sub2": "43",
-      "sub3": "53"
+      "sub1": 54,
+      "sub2": 43,
+      "sub3": 53
    },
    {
-      "name": "max",
-      "class": "3",
+      "name": "Kevin",
+      "class": 3,
       "section": "A",
-      "sub1": "23",
-      "sub2": "35",
-      "sub3": "35"
+      "sub1": 33,
+      "sub2": 55,
+      "sub3": 45
    },
    {
-      "name": "kevin",
-      "class": "3",
+      "name": "Janet",
+      "class": 3,
       "section": "B",
-      "sub1": "54",
-      "sub2": "43",
-      "sub3": "53"
+      "sub1": 74,
+      "sub2": 53,
+      "sub3": 73
    },
    {
-      "name": "max",
-      "class": "3",
+      "name": "Ronaldo",
+      "class": 3,
       "section": "A",
-      "sub1": "23",
-      "sub2": "35",
-      "sub3": "35"
+      "sub1": 13,
+      "sub2": 25,
+      "sub3": 35
    },
    {
-      "name": "kevin",
-      "class": "3",
+      "name": "Christipher",
+      "class": 3,
       "section": "B",
-      "sub1": "54",
-      "sub2": "43",
-      "sub3": "53"
+      "sub1": 44,
+      "sub2": 53,
+      "sub3": 63
    }
 ]

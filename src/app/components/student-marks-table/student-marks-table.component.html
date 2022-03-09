@@ -1,5 +1,5 @@
 <table>
-    <th *ngFor="let heading of headings">
+    <th *ngFor="let heading of headings" (click)="onClickOfHeader(heading)">
         {{heading}}
     </th>
     <tr *ngFor="let student of students">
@@ -7,5 +7,4 @@
             {{entry}}
         </td>
     </tr>
-
 </table>
