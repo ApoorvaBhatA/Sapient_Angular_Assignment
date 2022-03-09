@@ -28,7 +28,9 @@
       "@timer/*":["./src/app/components/timer/*"],
       "@reactive-timer/*":["./src/app/components/reactive-timer/*"],
       "@utils/*":["./src/app/utils/*"],
-      "@student/*":["./src/app/components/student-marks-table/*"]
+      "@student/*":["./src/app/components/student-marks-table/*"],
+      "@dynamic-div/*":["./src/app/components/dynamic-div/*"]
+
     },
     "lib": [
       "es2020",

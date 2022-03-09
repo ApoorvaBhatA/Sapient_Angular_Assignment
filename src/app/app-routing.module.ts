@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'route5',
     loadChildren: () => import('@student/student-marks-table.module').then(m => m.StudentMarksTableModule)
+  },
+  {
+    path: 'route6',
+    loadChildren: () => import('@dynamic-div/dynamic-div.module').then(m => m.DynamicDivModule)
   }
 ];
 
