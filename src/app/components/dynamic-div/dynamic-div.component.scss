@@ -1,0 +1,13 @@
+.grid-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    div {
+        height: 200px;
+        width: 200px;
+        button {
+            height: inherit;
+            width: inherit;
+        }
+    }
+}
