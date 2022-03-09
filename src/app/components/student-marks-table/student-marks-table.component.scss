@@ -3,3 +3,7 @@ table,th,td {
     border-collapse: collapse;
     padding: 20px;
 }
+th {
+    cursor: pointer;
+    text-transform: capitalize;
+}
