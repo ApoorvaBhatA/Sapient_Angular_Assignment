@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import ecommerceProducts from '@json-data/products.json'
+import { Product } from '@utils/models/product.model';
 
 @Component({
   selector: 'app-ecommerce-products',
@@ -7,7 +8,7 @@ import ecommerceProducts from '@json-data/products.json'
   styleUrls: ['./ecommerce-products.component.scss']
 })
 export class EcommerceProductsComponent implements OnInit {
-  products: { title: string; type: string; description: string; filename: string; height: number; width: number; price: number; rating: number; }[] = [];
+  products: Product[] = [];
   viewFlag: number = 0;
   
   constructor() { }

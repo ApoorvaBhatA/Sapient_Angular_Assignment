@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 
 @Component({
   selector: 'time-stamp-logger',
@@ -7,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TimeStampLoggerComponent implements OnInit {
 
-  @Input() timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
-  timers: Array<{ timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date }> =[];
+  @Input() timerDetails!: Timer;
+  timers: Array<Timer> =[];
   
   constructor() { 
     console.log(this.timers);
