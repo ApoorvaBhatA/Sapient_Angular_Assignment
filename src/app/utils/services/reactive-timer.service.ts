@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class ReactiveTimerService {
 
-  timerData = new Subject<{timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date}>();
+  timerData = new Subject<Timer>();
   startButtonClickCount = new BehaviorSubject<number>(0);
   pauseButtonClickCount = new BehaviorSubject<number>(0)
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 
 @Component({
   selector: 'timer-controller',
@@ -9,7 +10,7 @@ export class TimerControllerComponent implements OnInit {
 
   timerLimit!: number;
   startFlag: boolean | undefined;
-  @Output() initiateTimer = new EventEmitter<{ timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date }>();
+  @Output() initiateTimer = new EventEmitter<Timer>();
   @Input() pausedTime: Array<number> = []
 
 

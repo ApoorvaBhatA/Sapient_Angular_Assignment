@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 
 @Component({
   selector: 'app-timer',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-  timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
+  timerDetails!: Timer;
   pausedTimeDetails: Array<number> = [];
 
   constructor() { }

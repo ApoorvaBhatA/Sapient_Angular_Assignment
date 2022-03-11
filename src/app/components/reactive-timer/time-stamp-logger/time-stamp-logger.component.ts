@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 import { ReactiveTimerService } from '@utils/services/reactive-timer.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ReactiveTimerService } from '@utils/services/reactive-timer.service';
 })
 export class TimeStampLoggerComponent implements OnInit {
 
-  timers: Array<{ timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date }> = [];
+  timers: Array<Timer> = [];
 
   constructor(private reactiveTimerService: ReactiveTimerService) { }
 

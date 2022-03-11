@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Timer } from '@utils/models/timer.model';
 
 @Component({
   selector: 'display-count-down',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class DisplayCountDownComponent implements OnInit {
 
   intervalTracker!: number;
-  @Input() timerDetails!: { timerLimit: number, startFlag: boolean, resetFlag: boolean, dateTime: Date };
+  @Input() timerDetails!: Timer;
   timer: number | undefined;
   pausedTimeTracker: Array<number> = []
   @Output() pausedTime = new EventEmitter<{ pausedTimeTracker: Array<number> }>()

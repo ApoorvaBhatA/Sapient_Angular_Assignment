@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import routes from '@json-data/routes.json'
+import { QuickLink } from '@utils/models/quick-link.model';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import routes from '@json-data/routes.json'
 })
 export class HomeComponent implements OnInit {
 
-  quickLinks: { displayName: string; url: string; }[]= [];
+  quickLinks: QuickLink[]= [];
 
   constructor() { }
 
