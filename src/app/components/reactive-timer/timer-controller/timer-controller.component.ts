@@ -10,6 +10,7 @@ export class TimerControllerComponent implements OnInit {
 
   timerLimit!: number;
   startFlag: boolean | undefined;
+  isTimerExpired!: boolean;
 
   constructor(private reactiveTimerService : ReactiveTimerService) { }
 
@@ -30,10 +31,12 @@ export class TimerControllerComponent implements OnInit {
 
   onClickOfResetButton() {
     this.startFlag = false;
+    this.isTimerExpired = false;
     this.reactiveTimerService.timerData.next({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true, dateTime: new Date() })
   }
 
   ngOnInit(): void {
+    this.reactiveTimerService.isTimerExpired.subscribe(data=>{this.isTimerExpired = data})
   }
 
 }

@@ -9,6 +9,7 @@ export class ReactiveTimerService {
 
   timerData = new Subject<Timer>();
   startButtonClickCount = new BehaviorSubject<number>(0);
-  pauseButtonClickCount = new BehaviorSubject<number>(0)
+  pauseButtonClickCount = new BehaviorSubject<number>(0);
+  isTimerExpired = new BehaviorSubject<boolean>(false)
 
 }

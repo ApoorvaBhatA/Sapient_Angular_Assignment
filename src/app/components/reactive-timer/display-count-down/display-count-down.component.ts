@@ -17,6 +17,10 @@ export class DisplayCountDownComponent implements OnInit {
     this.intervalTracker = window.setInterval(() => {
       if (this.timer)
         this.timer = this.timer - 1;
+        if(this.timer == 0) {
+          this.reactiveTimerService.isTimerExpired.next(true);
+          clearInterval(this.intervalTracker);
+        }
     }, 1000);
   }
 

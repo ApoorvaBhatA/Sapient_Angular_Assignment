@@ -2,7 +2,7 @@
 <input id="timer" name="timer" type="text" [(ngModel)]="timerLimit">
 
 <div class="btn-wrap">
-    <button (click)="onClickOfStartPauseButton()" [disabled]="!timerLimit" class="start-btn">Start/Pause</button>
+    <button (click)="onClickOfStartPauseButton()" [disabled]="!timerLimit || isTimerExpired" class="start-btn">Start/Pause</button>
     <button (click)="onClickOfResetButton()" [disabled]="!timerLimit" class="pause-btn">Reset</button>
 </div>
 
