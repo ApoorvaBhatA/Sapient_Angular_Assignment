@@ -9,27 +9,34 @@ import { ReactiveTimerService } from '@utils/services/reactive-timer.service';
 export class DisplayCountDownComponent implements OnInit {
 
   intervalTracker!: number;
-  timer: number | undefined;
+  timer!: number;
 
-  constructor(private reactiveTimerService : ReactiveTimerService) { }
+  constructor(private reactiveTimerService: ReactiveTimerService) { }
 
   startTimer() {
     this.intervalTracker = window.setInterval(() => {
       if (this.timer)
         this.timer = this.timer - 1;
-        if(this.timer == 0) {
-          this.reactiveTimerService.isTimerExpired.next(true);
-          clearInterval(this.intervalTracker);
-        }
+      if (this.timer == 0) {
+        this.reactiveTimerService.isTimerExpired.next(true);
+        clearInterval(this.intervalTracker);
+      }
     }, 1000);
   }
 
   pauseTimer() {
+    if (this.timer) {
+      let pausedTimings: number[]=[];
+      this.reactiveTimerService.getPausedTime().subscribe(data => {
+        pausedTimings = [...data,this.timer]
+      })
+      this.reactiveTimerService.setPausedTime(pausedTimings)
+    }
     clearInterval(this.intervalTracker);
   }
 
   ngOnInit(): void {
-    this.reactiveTimerService.timerData.subscribe((data)=>{
+    this.reactiveTimerService.timerData.subscribe((data) => {
       if (!data.startFlag && !data.resetFlag) {
         this.pauseTimer();
       }
