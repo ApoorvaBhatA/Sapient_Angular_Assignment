@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, SimpleChanges } from '@angular/core';
 import { Timer } from '@utils/models/timer.model';
 
 @Component({
@@ -12,6 +12,7 @@ export class TimerControllerComponent implements OnInit {
   startFlag: boolean | undefined;
   @Output() initiateTimer = new EventEmitter<Timer>();
   @Input() pausedTime: Array<number> = []
+  @Input() isTimerExpired!: boolean;
 
 
   constructor() { }
@@ -23,6 +24,7 @@ export class TimerControllerComponent implements OnInit {
 
   onClickOfResetButton() {
     this.startFlag = false;
+    this.isTimerExpired = false;
     this.initiateTimer.emit({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true, dateTime: new Date() })
   }
 

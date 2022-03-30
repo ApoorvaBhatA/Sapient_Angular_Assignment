@@ -9,12 +9,17 @@ import { Timer } from '@utils/models/timer.model';
 export class TimerComponent implements OnInit {
   timerDetails!: Timer;
   pausedTimeDetails: Array<number> = [];
+  isTimerExpired!: boolean;
 
   constructor() { }
 
   getTimerDetails(event: any) {
     this.timerDetails = event;
-    console.log(event);
+    this.isTimerExpired = false;
+  }
+
+  countDownCompleted(event:any) {
+    this.isTimerExpired = event.isTimerExpired;
   }
 
   getpausedTimeDetails(event: any) {

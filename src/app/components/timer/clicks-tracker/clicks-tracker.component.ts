@@ -23,10 +23,10 @@ export class ClicksTrackerComponent implements OnInit {
     this.pausedCount = 0;
 
     for (let i = 0; i < this.timers.length; i++) {
-      if (this.timers[i].startFlag == true) {
+      if (this.timers[i].startFlag === true) {
         this.startCount = this.startCount + 1;
       }
-      else {
+      else if(this.timers[i].startFlag === false && this.timers[i].resetFlag === false){
         this.pausedCount = this.pausedCount + 1
       }
     }

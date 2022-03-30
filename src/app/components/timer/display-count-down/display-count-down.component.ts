@@ -13,6 +13,8 @@ export class DisplayCountDownComponent implements OnInit {
   timer: number | undefined;
   pausedTimeTracker: Array<number> = []
   @Output() pausedTime = new EventEmitter<{ pausedTimeTracker: Array<number> }>()
+  @Output() countDownCompleted = new EventEmitter<{isTimerExpired : boolean}>()
+
 
   constructor() { }
 
@@ -34,7 +36,12 @@ export class DisplayCountDownComponent implements OnInit {
     this.intervalTracker = window.setInterval(() => {
       if (this.timer)
         this.timer = this.timer - 1;
+        if(this.timer == 0) {
+          this.countDownCompleted.emit({isTimerExpired:true});
+          clearInterval(this.intervalTracker);
+        }
     }, 1000);
+    
   }
 
   pauseTimer() {
@@ -42,7 +49,6 @@ export class DisplayCountDownComponent implements OnInit {
       this.pausedTimeTracker.push(this.timer);
     this.pausedTime.emit({ pausedTimeTracker: this.pausedTimeTracker })
     clearInterval(this.intervalTracker);
-
   }
 
   ngOnInit(): void {
