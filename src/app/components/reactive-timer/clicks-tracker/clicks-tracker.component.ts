@@ -14,10 +14,10 @@ export class ClicksTrackerComponent implements OnInit {
   constructor(private reactiveTimerService: ReactiveTimerService) { }
 
   ngOnInit(): void {
-    this.reactiveTimerService.startButtonClickCount.subscribe((data)=>{
+    this.reactiveTimerService.getStartCount().subscribe((data)=>{
       this.startCount = data;
     })
-    this.reactiveTimerService.pauseButtonClickCount.subscribe((data)=>{
+    this.reactiveTimerService.getPausedCount().subscribe((data)=>{
       this.pausedCount = data;
     })
   }

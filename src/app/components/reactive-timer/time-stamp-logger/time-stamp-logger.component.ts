@@ -14,7 +14,7 @@ export class TimeStampLoggerComponent implements OnInit {
   constructor(private reactiveTimerService: ReactiveTimerService) { }
 
   ngOnInit(): void {
-    this.reactiveTimerService.timerData.subscribe((data) => {this.timers.push(data) })
+    this.reactiveTimerService.getTimerData().subscribe((data) => {this.timers.push(data) })
   }
 
 }

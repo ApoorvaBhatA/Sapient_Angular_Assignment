@@ -18,7 +18,7 @@ export class DisplayCountDownComponent implements OnInit {
       if (this.timer)
         this.timer = this.timer - 1;
       if (this.timer == 0) {
-        this.reactiveTimerService.isTimerExpired.next(true);
+        this.reactiveTimerService.setTimerStatus(true);
         clearInterval(this.intervalTracker);
       }
     }, 1000);
@@ -36,7 +36,7 @@ export class DisplayCountDownComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.reactiveTimerService.timerData.subscribe((data) => {
+    this.reactiveTimerService.getTimerData().subscribe((data) => {
       if (!data.startFlag && !data.resetFlag) {
         this.pauseTimer();
       }

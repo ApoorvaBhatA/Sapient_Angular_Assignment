@@ -17,27 +17,27 @@ export class TimerControllerComponent implements OnInit {
 
   onClickOfStartPauseButton() {
     this.startFlag = !this.startFlag;
-    this.reactiveTimerService.timerData.next({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: false, dateTime: new Date() });
+    this.reactiveTimerService.setTimerData({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: false, dateTime: new Date() });
     if(this.startFlag) {
       let startCount!:number;
-      this.reactiveTimerService.startButtonClickCount.subscribe(data=>{startCount = data+1})
-      this.reactiveTimerService.startButtonClickCount.next(startCount)
+      this.reactiveTimerService.getStartCount().subscribe(data=>{startCount = data+1})
+      this.reactiveTimerService.setStartCount(startCount)
     }
     else {
       let pausedCount!:number;
-      this.reactiveTimerService.pauseButtonClickCount.subscribe(data=>{pausedCount = data+1})
-      this.reactiveTimerService.pauseButtonClickCount.next(pausedCount)
+      this.reactiveTimerService.getPausedCount().subscribe(data=>{pausedCount = data+1})
+      this.reactiveTimerService.setPausedCount(pausedCount)
     }
   }
 
   onClickOfResetButton() {
     this.startFlag = false;
     this.isTimerExpired = false;
-    this.reactiveTimerService.timerData.next({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true, dateTime: new Date() })
+    this.reactiveTimerService.setTimerData({ timerLimit: this.timerLimit, startFlag: this.startFlag, resetFlag: true, dateTime: new Date() })
   }
 
   ngOnInit(): void {
-    this.reactiveTimerService.isTimerExpired.subscribe(data=>{this.isTimerExpired = data})
+    this.reactiveTimerService.getTimerStatus().subscribe(data=>{this.isTimerExpired = data})
     this.reactiveTimerService.getPausedTime().subscribe(data=>{
       this.pausedTime = data
     })
