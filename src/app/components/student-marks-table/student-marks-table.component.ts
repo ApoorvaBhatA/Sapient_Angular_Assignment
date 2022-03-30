@@ -14,6 +14,7 @@ export class StudentMarksTableComponent implements OnInit {
   constructor() { }
 
   onClickOfHeader(header: string) {
+    //creating an object to keep track of number of clicks
     if (this.headerClickTrack.hasOwnProperty(header)) {
       this.headerClickTrack[header] = (this.headerClickTrack[header]>3 ? this.headerClickTrack[header]=0 : this.headerClickTrack[header]) + 1;
     }
@@ -24,11 +25,6 @@ export class StudentMarksTableComponent implements OnInit {
   }
 
   sort(key:string, sortOrder:number) {
-    if(sortOrder == 1){
-      this.students.sort((a,b)=> (a[key] > b[key]) ? 1 : -1);
-    }
-    else 
-
     switch(sortOrder) {
       case 1 :
         //ascending
