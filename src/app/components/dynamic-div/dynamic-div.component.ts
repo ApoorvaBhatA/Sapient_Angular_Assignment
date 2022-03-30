@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import itemList from '@json-data/items.json'
+import { OrdinalSuffixPipe } from '@utils/pipes/ordinal-suffix.pipe';
 
 @Component({
   selector: 'app-dynamic-div',
@@ -14,7 +15,8 @@ export class DynamicDivComponent implements OnInit {
   constructor() { }
 
   onClickOfButton(i: number) {
-    window.alert(i)
+    const suffix = new OrdinalSuffixPipe()
+    window.alert("Button in " + suffix.transform(i) + " div clicked")
   }
 
   ngOnInit(): void {
