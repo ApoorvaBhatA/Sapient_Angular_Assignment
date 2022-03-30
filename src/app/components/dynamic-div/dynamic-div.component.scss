@@ -6,10 +6,12 @@
     div {
         height: 200px;
         width: 200px;
-        background-color: #8AAAE5;
+        background-color: #606060;
         display: flex;
         justify-content: center;
+        border: 1px solid #404040;
         align-items: end;
+        border-radius: 5%;
         button {
             height: 22%;
             width: 50%;

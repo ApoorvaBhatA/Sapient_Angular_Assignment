@@ -3,8 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px 10%;
-    margin-top: 100px;
+    align-items: center;
     .card {
         color: #F8F8F8;
         border-radius: 4px;
@@ -12,13 +11,14 @@
         background-color: #606060;
         height: 40px;
         width: 200px;
-        margin: 0 8px 16px;
+        margin: 5%;
         padding: 16px;
         transition: all 0.2s ease-in-out;
         line-height: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-decoration: none;
       }
       span {
         vertical-align: top
@@ -26,4 +26,8 @@
       .card svg.material-icons path {
         fill: #F8F8F8;
       }
+}
+h1 {
+  text-align: center;
+  margin-top: 5%;
 }
