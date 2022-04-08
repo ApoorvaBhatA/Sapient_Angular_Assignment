@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicDivRoutingModule } from '@dynamic-div/dynamic-div-routing.module';
+import { DynamicDivComponent } from '@dynamic-div/dynamic-div.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DynamicDivComponent
+  ],
   imports: [
     CommonModule,
     DynamicDivRoutingModule
