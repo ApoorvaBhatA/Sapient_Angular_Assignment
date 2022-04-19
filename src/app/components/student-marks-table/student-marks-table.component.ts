@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import studentsData from '@json-data/students.json'
 
 @Component({
   selector: 'app-student-marks-table',
@@ -8,10 +8,11 @@ import studentsData from '@json-data/students.json'
 })
 export class StudentMarksTableComponent implements OnInit {
   students: {[key: string]: string | number }[] = [];
+  studentsData: {[key: string]: string | number }[] = [];
   headings: string[] = [];
   headerClickTrack : {[key: string]: number} = {}
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   onClickOfHeader(header: string) {
     //creating an object to keep track of number of clicks
@@ -36,13 +37,16 @@ export class StudentMarksTableComponent implements OnInit {
       break;
       default: 
         //reset
-        this.students = JSON.parse(JSON.stringify(studentsData));
+        this.students = JSON.parse(JSON.stringify(this.studentsData));
     }
   }
 
   ngOnInit(): void {
-    this.students = JSON.parse(JSON.stringify(studentsData));
-    this.headings = Object.keys(this.students[0]);
+    this.httpClient.get('data/students.json').subscribe((resp:any)=>{
+      this.studentsData = JSON.parse(JSON.stringify(resp));
+      this.students = JSON.parse(JSON.stringify(resp));
+      this.headings = Object.keys(this.students[0]);
+    });
   }
 
 }

@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import routes from '@json-data/routes.json'
 import { QuickLink } from '@utils/models/quick-link.model';
 
 @Component({
@@ -11,10 +11,11 @@ export class HomeComponent implements OnInit {
 
   quickLinks: QuickLink[]= [];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.quickLinks = routes;
+    this.httpClient.get('data/routes.json').subscribe((resp:any)=>{
+      this.quickLinks = resp
+    });
   }
-
 }

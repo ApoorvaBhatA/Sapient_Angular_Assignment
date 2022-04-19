@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import itemList from '@json-data/items.json'
 import { OrdinalSuffixPipe } from '@utils/pipes/ordinal-suffix.pipe';
 
 @Component({
@@ -12,7 +12,7 @@ export class DynamicDivComponent implements OnInit {
   items: string[] = []
   @ViewChild('endOfPage') endOfPage!: ElementRef;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   onClickOfButton(i: number) {
     const suffix = new OrdinalSuffixPipe()
@@ -20,14 +20,20 @@ export class DynamicDivComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getItems();
   }
 
   ngAfterViewInit() {
     const threshold = 0;
     const observer = new IntersectionObserver(
-      () => {
-        this.getItems()
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.getItems()
+          }
+          else {
+            return
+          }
+        })
       },
       { threshold }
     );
@@ -35,9 +41,14 @@ export class DynamicDivComponent implements OnInit {
   }
 
   getItems() {
-    itemList.forEach((element) => {
-      this.items.push(element)
-    })
+    this.httpClient.get('data/items.json').subscribe((resp: any) => {
+      console.log("kl");
+
+      resp.forEach((element: any) => {
+
+        this.items.push(element)
+      })
+    });
   }
 
 }
